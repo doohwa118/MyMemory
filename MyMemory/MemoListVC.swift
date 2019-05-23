@@ -12,6 +12,38 @@ class MemoListVC: UITableViewController {
     // 앱 델리케이트 객체의 참조 정보를 읽어온다.
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    override func viewDidLoad() {
+        /* 이 부분은 테스트를 위한 더미 데이터 코드입니다.
+         실제 실습 진행시에는 관련 코드를 삭제하시기 바랍니다.*/
+        
+        let memo = MemoData()
+        memo.title = "워크샵 준비 물품들"
+        memo.contents = "라면, 양파, 감자, 파, 계란, 세제류, 생수, 탄산수, 워셔액, 비누, 치약, 칫솔, 수건, 라면, 양파, 감자, 파, 계란, 세제류, 생수, 탄산수, 워셔액, 비누, 치약, 칫솔, 수건"
+        memo.regdate = Date()
+        
+        appDelegate.memolist.append(memo)
+        
+        let memo1 = MemoData()
+        memo1.title = "워크샵 출발 전 챙겨야 할 것들"
+        memo1.contents = "이동중 섭취물품들, 인원 체크 및 예약장소 재확인"
+        memo1.regdate = Date(timeIntervalSinceNow: 3000)
+        
+        appDelegate.memolist.append(memo1)
+        
+        let memo2 = MemoData()
+        memo2.title = "출발 전 체크 항목들"
+        memo2.contents = "인원별 탑승 완료 여부 확인 및 각 이동 차량 점검"
+        memo2.regdate = Date(timeIntervalSinceNow: 4000)
+        
+        appDelegate.memolist.append(memo2)
+        
+        let memo3 = MemoData()
+        memo3.title = "워크샵 결과 정리"
+        memo3.contents = "부족했던 점 : 워크샵 장소 이동 사이에 간격이 너무 길어 사람들의 주의가 분산됨"
+        memo3.regdate = Date(timeIntervalSinceNow: 8000)
+        
+        appDelegate.memolist.append(memo3)
+    }
     
     // 화면이 나타날 때마다 호출되는 메소드
     override func viewWillAppear(_ animated: Bool) {
