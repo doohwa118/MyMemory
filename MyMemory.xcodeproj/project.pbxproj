@@ -40,9 +40,15 @@
 		A3A2D2C8229565BB005C3F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A2D2C7229565BB005C3F32 /* Assets.xcassets */; };
 		A3A2D2CB229565BB005C3F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A2D2C9229565BB005C3F32 /* LaunchScreen.storyboard */; };
 		A3FDC89F22978476004E3057 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDC89E22978476004E3057 /* MemoDAO.swift */; };
+		A3FDC8A12297A108004E3057 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDC8A02297A108004E3057 /* JoinVC.swift */; };
+		A3FDC8A52297B90E004E3057 /* DataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDC8A42297B90E004E3057 /* DataSync.swift */; };
+		B3B272D506EBB3700809ACF0 /* Pods_MyMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2309FBEA92A0A2B237BFF288 /* Pods_MyMemory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2309FBEA92A0A2B237BFF288 /* Pods_MyMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		309BDA5E0D8B0E0285B6448B /* Pods-MyMemory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemory.release.xcconfig"; path = "Target Support Files/Pods-MyMemory/Pods-MyMemory.release.xcconfig"; sourceTree = "<group>"; };
+		6B10FA45DF9C1D0A90E204B9 /* Pods-MyMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemory.debug.xcconfig"; path = "Target Support Files/Pods-MyMemory/Pods-MyMemory.debug.xcconfig"; sourceTree = "<group>"; };
 		A302EA8022962540006DBBA4 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
 		A302EA8222962588006DBBA4 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
 		A302EA8422962595006DBBA4 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		A3A2D2CA229565BB005C3F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A2D2CC229565BB005C3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3FDC89E22978476004E3057 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
+		A3FDC8A02297A108004E3057 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
+		A3FDC8A42297B90E004E3057 /* DataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +95,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B272D506EBB3700809ACF0 /* Pods_MyMemory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28D5F6FF151942496D102464 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B10FA45DF9C1D0A90E204B9 /* Pods-MyMemory.debug.xcconfig */,
+				309BDA5E0D8B0E0285B6448B /* Pods-MyMemory.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A302EA8A2296402E006DBBA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +146,8 @@
 				A302EA8A2296402E006DBBA4 /* Resources */,
 				A3A2D2BC229565BB005C3F32 /* MyMemory */,
 				A3A2D2BB229565BB005C3F32 /* Products */,
+				28D5F6FF151942496D102464 /* Pods */,
+				D91939BE4A0ABAC3718B7E7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,7 +169,9 @@
 				A302EA8022962540006DBBA4 /* MemoListVC.swift */,
 				A3FDC89E22978476004E3057 /* MemoDAO.swift */,
 				A302EA8D229659ED006DBBA4 /* CSLogButton.swift */,
+				A3FDC8A02297A108004E3057 /* JoinVC.swift */,
 				A302EAAB22966F44006DBBA4 /* SideBarVC.swift */,
+				A3FDC8A42297B90E004E3057 /* DataSync.swift */,
 				A302EA8822962B91006DBBA4 /* MemoData.swift */,
 				A302EAB52296B3C6006DBBA4 /* Utils.swift */,
 				A302EAAF229689FB006DBBA4 /* UserInfoManager.swift */,
@@ -168,6 +190,14 @@
 			path = MyMemory;
 			sourceTree = "<group>";
 		};
+		D91939BE4A0ABAC3718B7E7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2309FBEA92A0A2B237BFF288 /* Pods_MyMemory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3A2D2CF229565BB005C3F32 /* Build configuration list for PBXNativeTarget "MyMemory" */;
 			buildPhases = (
+				EA3E18878A0401289DC301F1 /* [CP] Check Pods Manifest.lock */,
 				A3A2D2B6229565BB005C3F32 /* Sources */,
 				A3A2D2B7229565BB005C3F32 /* Frameworks */,
 				A3A2D2B8229565BB005C3F32 /* Resources */,
+				C45CAB2AF2BCDFF2ED7F8AB9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +281,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C45CAB2AF2BCDFF2ED7F8AB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMemory/Pods-MyMemory-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyMemory/Pods-MyMemory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA3E18878A0401289DC301F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyMemory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A3A2D2B6229565BB005C3F32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -259,8 +338,10 @@
 				A302EAB0229689FB006DBBA4 /* UserInfoManager.swift in Sources */,
 				A302EA8922962B91006DBBA4 /* MemoData.swift in Sources */,
 				A3A2D2C6229565BB005C3F32 /* MyMemory.xcdatamodeld in Sources */,
+				A3FDC8A12297A108004E3057 /* JoinVC.swift in Sources */,
 				A302EAB62296B3C6006DBBA4 /* Utils.swift in Sources */,
 				A302EA8322962588006DBBA4 /* MemoFormVC.swift in Sources */,
+				A3FDC8A52297B90E004E3057 /* DataSync.swift in Sources */,
 				A302EAAC22966F44006DBBA4 /* SideBarVC.swift in Sources */,
 				A302EAB82296B480006DBBA4 /* TutorialContentsVC.swift in Sources */,
 				A302EA9822966795006DBBA4 /* SWRevealViewController.m in Sources */,
@@ -413,12 +494,14 @@
 		};
 		A3A2D2D0229565BB005C3F32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B10FA45DF9C1D0A90E204B9 /* Pods-MyMemory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BA58QX9W7;
 				INFOPLIST_FILE = MyMemory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,12 +517,14 @@
 		};
 		A3A2D2D1229565BB005C3F32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 309BDA5E0D8B0E0285B6448B /* Pods-MyMemory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BA58QX9W7;
 				INFOPLIST_FILE = MyMemory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
