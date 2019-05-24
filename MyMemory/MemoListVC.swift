@@ -8,11 +8,18 @@
 
 import UIKit
 
-class MemoListVC: UITableViewController {
+class MemoListVC: UITableViewController, UISearchBarDelegate {
+    lazy var dao = MemoDAO() // STEP 1)
+    
     // 앱 델리케이트 객체의 참조 정보를 읽어온다.
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
+        // 검색 바의 키보드에서 리턴 키가 항상 활성화되어 있도록 처리
+        searchBar.enablesReturnKeyAutomatically = false
+        
         // SWRevealViewController 라이브러리의 revealViewController 객체를 읽어온다.
         if let revealVC = self.revealViewController() {
             // 바 버튼 아이템 객체를 정의한다.
@@ -27,37 +34,6 @@ class MemoListVC: UITableViewController {
             // 제스처 객체를 뷰에 추가한다.
             self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
-        
-        /* 이 부분은 테스트를 위한 더미 데이터 코드입니다.
-         실제 실습 진행시에는 관련 코드를 삭제하시기 바랍니다.*/
-        
-        let memo = MemoData()
-        memo.title = "워크샵 준비 물품들"
-        memo.contents = "라면, 양파, 감자, 파, 계란, 세제류, 생수, 탄산수, 워셔액, 비누, 치약, 칫솔, 수건, 라면, 양파, 감자, 파, 계란, 세제류, 생수, 탄산수, 워셔액, 비누, 치약, 칫솔, 수건"
-        memo.regdate = Date()
-        
-        appDelegate.memolist.append(memo)
-        
-        let memo1 = MemoData()
-        memo1.title = "워크샵 출발 전 챙겨야 할 것들"
-        memo1.contents = "이동중 섭취물품들, 인원 체크 및 예약장소 재확인"
-        memo1.regdate = Date(timeIntervalSinceNow: 3000)
-        
-        appDelegate.memolist.append(memo1)
-        
-        let memo2 = MemoData()
-        memo2.title = "출발 전 체크 항목들"
-        memo2.contents = "인원별 탑승 완료 여부 확인 및 각 이동 차량 점검"
-        memo2.regdate = Date(timeIntervalSinceNow: 4000)
-        
-        appDelegate.memolist.append(memo2)
-        
-        let memo3 = MemoData()
-        memo3.title = "워크샵 결과 정리"
-        memo3.contents = "부족했던 점 : 워크샵 장소 이동 사이에 간격이 너무 길어 사람들의 주의가 분산됨"
-        memo3.regdate = Date(timeIntervalSinceNow: 8000)
-        
-        appDelegate.memolist.append(memo3)
     }
     
     // 화면이 나타날 때마다 호출되는 메소드
@@ -68,6 +44,9 @@ class MemoListVC: UITableViewController {
             self.present(vc!, animated: false)
             return
         }
+        
+        // STEP 2) 코어 데이터에 저장된 데이터를 가져온다.
+        self.appDelegate.memolist = self.dao.fetch()
         
         // 테이블 데이터를 다시 읽어들인다. 이에 따라 행을 구성하는 로직이 다시 실행될 것이다.
         self.tableView.reloadData()
@@ -117,5 +96,28 @@ class MemoListVC: UITableViewController {
         // ③ 값을 전달한 다음, 상세 화면으로 이동한다.
         vc.param = row
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // 개별 행 스와프 시 삭제 기능
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let data = self.appDelegate.memolist[indexPath.row]
+        
+        // 코어 데이터에서 삭제한 다음, 배열 내 데이터 및 테이블 뷰 행을 차례로 삭제한다.
+        if dao.delete(data.objectID!) {
+            self.appDelegate.memolist.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let keyword = searchBar.text // 검색 바에 입력된 키워드를 가져온다.
+        
+        // 키워드를 적용하여 데이터를 검색하고, 테이블 뷰를 갱신한다.
+        self.appDelegate.memolist = self.dao.fetch(keyword: keyword)
+        self.tableView.reloadData()
     }
 }

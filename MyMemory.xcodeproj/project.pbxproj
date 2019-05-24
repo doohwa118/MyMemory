@@ -39,6 +39,7 @@
 		A3A2D2C6229565BB005C3F32 /* MyMemory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3A2D2C4229565BB005C3F32 /* MyMemory.xcdatamodeld */; };
 		A3A2D2C8229565BB005C3F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A2D2C7229565BB005C3F32 /* Assets.xcassets */; };
 		A3A2D2CB229565BB005C3F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A2D2C9229565BB005C3F32 /* LaunchScreen.storyboard */; };
+		A3FDC89F22978476004E3057 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDC89E22978476004E3057 /* MemoDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		A3A2D2C7229565BB005C3F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3A2D2CA229565BB005C3F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A2D2CC229565BB005C3F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3FDC89E22978476004E3057 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				A302EA9722966795006DBBA4 /* SWRevealViewController.m */,
 				A3A2D2BD229565BB005C3F32 /* AppDelegate.swift */,
 				A302EA8022962540006DBBA4 /* MemoListVC.swift */,
+				A3FDC89E22978476004E3057 /* MemoDAO.swift */,
 				A302EA8D229659ED006DBBA4 /* CSLogButton.swift */,
 				A302EAAB22966F44006DBBA4 /* SideBarVC.swift */,
 				A302EA8822962B91006DBBA4 /* MemoData.swift */,
@@ -261,6 +264,7 @@
 				A302EAAC22966F44006DBBA4 /* SideBarVC.swift in Sources */,
 				A302EAB82296B480006DBBA4 /* TutorialContentsVC.swift in Sources */,
 				A302EA9822966795006DBBA4 /* SWRevealViewController.m in Sources */,
+				A3FDC89F22978476004E3057 /* MemoDAO.swift in Sources */,
 				A302EA8522962595006DBBA4 /* MemoReadVC.swift in Sources */,
 				A302EA8122962540006DBBA4 /* MemoListVC.swift in Sources */,
 				A302EABB2296B6D5006DBBA4 /* TutorialMasterVC.swift in Sources */,
